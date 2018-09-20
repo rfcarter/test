@@ -17,12 +17,10 @@ def draw_board(board):
 
 def get_pick(board):
     global postion_picked
-    msg ='It is player ' + last_pick +' turn to pic a an open square: '
+    msg ='It is player ' + last_pick +' turn to pic an open square: '
     postion_picked=str(input(msg))
     while check_postion() == True:
-        postion_picked=str(input(msg))
-
-    
+        postion_picked=str(input(msg))  
    
 def check_postion():
     global postion_picked
@@ -36,8 +34,7 @@ def check_postion():
             last_pick = 'y'
         else:
             last_pick = 'x'
-        return(False)
-        
+        return(False)     
         
 def check_if_over(board):
     check_board(board,0,1,2)
@@ -55,9 +52,7 @@ def check_if_over(board):
     if end_game:    
         print("Game Over no one wins") 
         exit(0)   
-    
-    
-    
+   
 def check_board(board,a,b,c):
     if (board[a] == "x" and board[b] == "x" and board[c] == "x"):
         draw_board(board)
@@ -75,8 +70,7 @@ def start_game():
         check_if_over(board)
 
 if __name__ == '__main__':
-    board=[]
-    
+    board=[]  
     for i in range(10):
         board.append(str(i))
     draw_board(board)

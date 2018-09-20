@@ -10,6 +10,7 @@ def valid_month_abr(month_abr):
     return(mfn)
 
 def seasons_month(month_abr):
+    aseson_dict = { }
     mseasons_dict = {'jan':'winter','feb':'winter', 'mar':'spring', 'apr':'sprint',
                     'may':'spring','jun':'summer', 'jul':'summer', 'aug':'summer',
                     'sep':'fall',   'oct':'fall',  'nov':'fall',   'dec':'winter'}
