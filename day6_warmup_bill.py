@@ -6,7 +6,7 @@ def calc_bill(bill, tax_pct, tip_pct):
 
 if __name__ == '__main__':
     bill=int(input("Input amount of bill: "))
-    tax_pct=int(input("Input tax rate: "))
+    tax_pct=int(input("Input tax rate,: "))
     tip_pct=int(input("Input tip rate: "))
     bill_before_tip,bill_with_tip=calc_bill(bill, tax_pct, tip_pct)
     print(bill_before_tip, bill_with_tip)

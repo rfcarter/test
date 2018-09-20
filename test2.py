@@ -1,6 +1,13 @@
-list_a = [1, 2, 3]
-list_b = ['a', 'b', 'c', 'd', 'e']
+x = ''
 
-zipped_list = zip(list_a, list_b)
+def test_func():
+    print (x)
 
-print ("zipped list:", zipped_list) 
+def set_global_variable():
+   global x
+   x = 'abc'
+
+if __name__ == '__main__':
+    test_func()
+    set_global_variable()
+    test_func()
