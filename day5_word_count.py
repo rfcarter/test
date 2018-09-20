@@ -1,5 +1,3 @@
-
-
 def word_count(w, d):
     count = 0
     word_count = 0
