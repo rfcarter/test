@@ -1,13 +1,12 @@
-x = ''
-
-def test_func():
-    print (x)
-
-def set_global_variable():
-   global x
-   x = 'abc'
+def matrix(size,fill_value):
+    matrix=[]
+    for _ in range(size):
+        row=[]
+        for _ in range(size):
+            row.append(fill_value)
+        matrix.append(row)
+    return matrix
 
 if __name__ == '__main__':
-    test_func()
-    set_global_variable()
-    test_func()
+    print(matrix(3,'abc'))
+
