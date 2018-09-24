@@ -43,7 +43,7 @@ class Member():
     
     def add_coded_line(self, lines_of_code):
         self.lines_of_code.append(lines_of_code)
-        self.number_lines_of_code += len(lines_of_code.split('\n'))
+        self.number_lines_of_code += lines_of_code.count('\n')
         Member.get_coding_level(self)
 
     def get_coding_level(self):
@@ -57,10 +57,9 @@ class Member():
             self.coding_level = 'master'
 
 member=Member("John", "Brown", "01/01/1970")
-#print(member.member_name, member.lines_of_code, member.number_lines_of_code)
+print(member.member_name, "has written ", member.number_lines_of_code, "lines of code and is a", member.coding_level)
 member.add_coded_line(sample_code)
-print(sample_code)
-#print(member.member_name, member.lines_of_code, member.number_lines_of_code, member.coding_level)
+print(member.member_name, "has written ", member.number_lines_of_code, "lines of code and is a", member.coding_level)
 
 
 
