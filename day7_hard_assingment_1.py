@@ -1,3 +1,4 @@
+member=[]
 sample_code ="""
 my_str = str(input('Enter a string: '))
 my_new_str = ""
@@ -21,8 +22,8 @@ class OurClass():
     def add_class_members(self, member):
         self.members.append(member)
 
-    def check_if_at_capacity(self):
-        if self.size >= 20:
+    def check_if_at_capacity(self,class_limit=20):
+        if self.size >= class_limit:
             self.at_capacity = True
         else:
             self.at_capacity = False
@@ -50,16 +51,20 @@ class Member():
         if self.number_lines_of_code <= 100:
             self.coding_level = 'beginner'
         elif self.number_lines_of_code <= 1000:
-            self.coding_level = 'noviVersionn ce'
+            self.coding_level = 'novice'
         elif self.number_lines_of_code <= 10000:
             self.coding_level = 'intermediate'
         else:
             self.coding_level = 'master'
 
-member=Member("John", "Brown", "01/01/1970")
-print(member.member_name, "has written ", member.number_lines_of_code, "lines of code and is a", member.coding_level)
-member.add_coded_line(sample_code)
-print(member.member_name, "has written ", member.number_lines_of_code, "lines of code and is a", member.coding_level)
+member.append(Member("John", "Brown", "01/01/1970"))
+member.append(Member("Bill", "Jones", "03/22/1971"))
+for row in member:
+    print(row.member_name, "has written ", row.number_lines_of_code, "lines of code and is a", row.coding_level)
+# Get code from file
+for row in member:
+    if row.member_name == "Bill":
+        row.add_coded_line(sample_code)
 
-
-
+for row in member:
+    print(row.member_name, "has written ", row.number_lines_of_code, "lines of code and is a", row.coding_level)
