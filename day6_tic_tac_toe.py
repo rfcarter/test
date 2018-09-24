@@ -1,5 +1,6 @@
 last_pick='x'
 postion_picked=''
+board=[]  
 
 def draw_board(board):
     print('\r\n')
@@ -70,12 +71,8 @@ def start_game():
         check_if_over(board)
 
 if __name__ == '__main__':
-    board=[]  
+    
     for i in range(10):
         board.append(str(i))
     draw_board(board)
     start_game()
-    
-    
-
-    
