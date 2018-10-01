@@ -1,4 +1,4 @@
-last_pick='x'
+last_pick='X'
 postion_picked=''
 board=[]  
 
@@ -26,15 +26,15 @@ def get_pick(board):
 def check_postion():
     global postion_picked
     global last_pick
-    if board[int(postion_picked)] in {'x','y'}: 
+    if board[int(postion_picked)] in {'X','O'}: 
         print("Invalid Pick")
         return(True)
     else:
         board[int(postion_picked)] = last_pick
-        if last_pick == 'x':
-            last_pick = 'y'
+        if last_pick == 'X':
+            last_pick = 'O'
         else:
-            last_pick = 'x'
+            last_pick = 'X'
         return(False)     
         
 def check_if_over(board):
@@ -48,20 +48,20 @@ def check_if_over(board):
     check_board(board,2,5,8)
     end_game=True
     for i in range(9):
-        if board[i] not in  {'x','y'}:
+        if board[i] not in  {'X','O'}:
             end_game = False
     if end_game:    
         print("Game Over no one wins") 
         exit(0)   
    
 def check_board(board,a,b,c):
-    if (board[a] == "x" and board[b] == "x" and board[c] == "x"):
+    if (board[a] == "X" and board[b] == "X" and board[c] == "X"):
         draw_board(board)
         print("Game Over Player X wins")
         exit(0)
-    elif (board[a] == "y" and board[b] == "y" and board[c] == "y"):
+    elif (board[a] == "O" and board[b] == "O" and board[c] == "O"):
         draw_board(board)
-        print("Game Over Player Y wins")
+        print("Game Over Player O wins")
         exit(0)
 
 def start_game():
